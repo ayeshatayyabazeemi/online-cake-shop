@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Cake Shop</title>
+
+    <!-- Font Awesome & Styles -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="stylesheet" href="{% static 'app/css/index.css' %}">
+    <script src="{% static 'app/js/cart.js' %}" defer></script>
+</head>
+
+<body>
+
+    {% include 'app/header.html' %}
+    <div class="glass-container">
+        <!-- Hero Section -->
+        <section class="home" id="home">
+            <div class="slides-container">
+                <div class="slide active">
+                    <div class="content">
+                        <span style="
+    display: inline-block;
+    margin-bottom: 15px;
+    font-size: 30px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    background: linear-gradient(45deg, #5C2C06, #8B4513, #4E2A1D, #3B1E0F);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    position: relative;
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 3px solid #ff6a00;
+    padding-right: 5px;
+    animation: typing 3s steps(20, end) infinite, blink 0.8s infinite;
+">
+                            Order Cakes Online
+                        </span>
+                        <style>
+                            @keyframes typing {
+                                0% {
+                                    width: 0;
+                                }
+
+                                100% {
+                                    width: 100%;
+                                }
+                            }
+
+                            @keyframes blink {
+
+                                0%,
+                                100% {
+                                    border-color: transparent;
+                                }
+
+                                50% {
+                                    border-color: #ff6a00;
+                                }
+                            }
+                        </style>
+                        <h3>Delicious Cakes for Everyone</h3>
+                        <a href="#all-categories" class="btn">Buy Now</a>
+                    </div>
+                    <div class="image-container">
+                        <img src="https://ccpl.ninjaos.com/media/dev_team/products/gallery-image/07decb0b26fc6debb267ea5bd330f28c.jpg"
+                            alt="Delicious Cake">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Banner Section -->
+        <section class="banners-container">
+            <div class="banners">
+                <img src="https://www.barleyandsage.com/wp-content/uploads/2023/02/mini-cupcakes-1200x1200-1-500x375.jpg"
+                    alt="">
+            </div>
+            <div class="banners">
+                <img src="https://prettysimplesweet.com/wp-content/uploads/2019/07/Chocolate-Donuts.jpg" alt="">
+            </div>
+            <div class="banners">
+                <img src="https://images.immediate.co.uk/production/volatile/sites/30/2020/08/recipe-image-legacy-id-1043451_11-4713959.jpg"
+                    alt="">
+            </div>
+        </section>
+
+        <!-- Category Section -->
+        <section class="categorys" id="all-categories">
+            <h1 class="title">All Categories</h1>
+            <div class="box-containers">
+                <a href="{% url 'cupcake_view' %}" class="box">
+                    <img src="https://images.unsplash.com/photo-1426869884541-df7117556757?q=80&w=1470&auto=format&fit=crop"
+                        alt="Cupcake">
+                    <h3>Cupcakes</h3>
+                </a>
+                <a href="{% url 'brownie_view' %}" class="box">
+                    <img src="https://kitchen335co.com/wp-content/uploads/2023/03/fudgy-brownies-thumbnail-1-of-1.jpg"
+                        alt="Brownies">
+                    <h3>Brownies</h3>
+                </a>
+                <a href="{% url 'donut_view' %}" class="box">
+                    <img src="https://www.mybakingaddiction.com/wp-content/uploads/2014/09/sprinkle-topped-chocolate-donuts-hero.jpg"
+                        alt="Donuts">
+                    <h3>Donuts</h3>
+                </a>
+            </div>
+        </section>
+    </div>
+    {% include 'app/footer.html' %}
+</body>
+
+</html>

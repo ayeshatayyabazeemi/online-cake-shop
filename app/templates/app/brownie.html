@@ -1,0 +1,82 @@
+<!-- brownie.html -->
+
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brownies | Cake Bites</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="{% static 'app/css/brownie.css' %}">
+    <script src="{% static 'app/js/cart.js' %}" defer></script>
+</head>
+
+<body>
+    <style>
+        /* Ensure both icons are fixed in the viewport */
+        .floating-cart-icon {
+            position: fixed;
+            /* Keeps the icons fixed relative to the viewport */
+            background-color: rgba(255, 255, 255, 0.8);
+            /* Transparent background */
+            padding: 10px;
+            border-radius: 50%;
+            z-index: 1000;
+            /* Ensures icons are always on top */
+            font-size: 20px;
+            color: #333;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            /* Optional: adds a shadow for a "floating" effect */
+        }
+
+        /* Position the cart icon on the top-right */
+        .floating-cart-icon {
+            top: 20px;
+            right: 20px;
+        }
+
+        /* Ensure both icons don't move even on smaller screens */
+        @media (max-width: 600px) {
+            .floating-cart-icon {
+                font-size: 18px;
+                padding: 8px;
+                top: 10px;
+            }
+
+            .floating-cart-icon {
+                right: 10px;
+            }
+
+        }
+    </style>
+
+    <header>
+        <h1>Our Delicious Brownies</h1>
+    </header>
+    <div class="floating-cart-icon">
+        <a href="{% url 'cart_view' %}" target="main">
+            <div id="cart-btn" class="fas fa-shopping-cart"></div>
+        </a>
+    </div>
+    <section class="brownie-gallery">
+        {% for product in products %}
+        {% if product.category == "Brownies" %}
+        <div class="brownie-item">
+            <img src="{{ product.image }}" alt="{{ product.name }}">
+            <h3>{{ product.name }}</h3>
+            <p>{{ product.desc }}</p>
+            <p class="price">Rs{{ product.price }}</p>
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+        {% endif %}
+        {% endfor %}
+    </section>
+
+</body>
+
+</html>

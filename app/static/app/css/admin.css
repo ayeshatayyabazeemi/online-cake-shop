@@ -1,0 +1,90 @@
+/* admin.css */
+
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f7f7f7;
+    color: #333;
+    padding: 20px;
+}
+
+/* Header Styling */
+header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: 2.5rem;
+    color: #4a90e2;
+}
+
+/* Main Section Styling */
+main {
+    max-width: 90%;
+    margin: 0 auto;
+}
+
+h2 {
+    font-size: 1.8rem;
+    color: #333;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+/* Table Styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+thead {
+    background-color: #4a90e2;
+    color: #fff;
+}
+
+th, td {
+    text-align: left;
+    padding: 12px 15px;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    font-size: 1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+td {
+    font-size: 0.95rem;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+tr:hover {
+    background-color: #f1f9ff;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    table {
+        font-size: 0.85rem;
+    }
+
+    th, td {
+        padding: 10px 8px;
+    }
+}

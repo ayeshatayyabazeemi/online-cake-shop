@@ -1,0 +1,89 @@
+/* styles.css */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f7f7f7;
+    color: #333;
+}
+
+header {
+    text-align: center;
+    padding: 20px;
+    background-color: #432818;
+}
+
+h1 {
+    font-size: 2rem;
+    color: white;
+}
+.cupcake-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+}
+.cupcake-item {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    margin: 10px;
+    padding: 20px;
+    width: 250px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    
+}
+.cupcake-item img {
+    width: 100%;         
+    max-width: 200px;
+    height: auto;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.cupcake-item:hover {
+    transform: translateY(-10px); /* Move the box up slightly */
+    box-shadow: 0 8px 16px rgba(94, 52, 39, 0.2);
+    border: 2px solid #5e3427;
+    
+}
+
+h3 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-top: 10px;
+}
+
+.price {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #5e3427;
+    margin-top: 10px;
+}
+
+p {
+    margin-top: 5px;
+}
+
+button.add-to-cart {
+    background-color: #5e3427;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
+}
+
+button.add-to-cart:hover {
+    background-color: #4b291e;
+}

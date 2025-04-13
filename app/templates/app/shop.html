@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+{% load static %}
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Online Cake Shop</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="{% static 'app/css/style.css' %}">
+    <script src="{% static 'app/js/cart.js' %}" defer></script>
+</head>
+
+<body>
+    {% include 'app/header.html' %}
+
+    <section class="products" id="shop">
+        <h1 class="title"> <span> Top Selling Cakes</span> <a href="{% url 'view_ourcake' %}" target="main">view all
+                >></a> </h1>
+
+        <div class="box-container">
+            <div class="box">
+                <div class="icons">
+                    <a href="#" class="fas fa-shopping-cart" data-name="three milk cake" data-price="2000"></a>
+                </div>
+                <div class="img">
+                    <img src="https://pkgiftshop.com/public/user_files/product_images/1683824176-CKbigg.jpg"
+                        alt="three milk cake">
+                </div>
+                <div class="content">
+                    <h3>three milk Cake</h3>
+                    <div class="price">Rs. 2000</div>
+
+                </div>
+            </div>
+            <div class="box">
+                <div class="icons">
+                    <a href="#" class="fas fa-shopping-cart add-to-cart"></a> <!-- cart icon -->
+                </div>
+                <div class="img">
+                    <img decoding="async"
+                        src="https://rosettaflora.com/wp-content/uploads/2023/04/rosetta-begian-malt-cake-min.webp"
+                        alt="">
+                </div>
+                <div class="content">
+                    <h3>belgian malt cake</h3>
+                    <div class="price">Rs.1500</div>
+                </div>
+            </div>
+
+            <div class="box">
+                <div class="icons">
+                    <a href="#" class="fas fa-shopping-cart add-to-cart"></a> <!-- cart icon -->
+                </div>
+                <div class="img">
+                    <img decoding="async"
+                        src="https://giftinday.com/wp-content/uploads/2024/01/1673695107-kitkat-min.jpg" alt="">
+                </div>
+                <div class="content">
+                    <h3>kitkat cake</h3>
+                    <div class="price">Rs.1800</div>
+                </div>
+            </div>
+
+            <div class="box">
+                <div class="icons">
+                    <a href="#" class="fas fa-shopping-cart add-to-cart"></a> <!-- cart icon -->
+                </div>
+                <div class="img">
+                    <img decoding="async"
+                        src="https://www.newidea.com.au/wp-content/uploads/sites/17/media/136164/nutellafudgecake.jpg"
+                        alt="">
+                </div>
+                <div class="content">
+                    <h3>Nutella cake</h3>
+                    <div class="price">Rs.2100</div>
+                </div>
+            </div>
+
+            <div class="box">
+                <div class="icons">
+                    <a href="#" class="fas fa-shopping-cart add-to-cart"></a> <!-- cart icon -->
+                </div>
+                <div class="img">
+                    <img decoding="async"
+                        src="https://giftsandall.com/wp-content/uploads/2023/09/Ferrero-Rochers-Cake-From-Masooms-Bakers.jpg"
+                        alt="">
+                </div>
+                <div class="content">
+                    <h3>ferrero classic cake</h3>
+                    <div class="price">Rs.2200</div>
+                </div>
+            </div>
+
+            <div class="box">
+                <div class="icons">
+                    <a href="#" class="fas fa-shopping-cart add-to-cart"></a> <!-- cart icon -->
+                </div>
+                <div class="img">
+                    <img decoding="async"
+                        src="https://www.thebakerchick.com/wp-content/uploads/2013/06/choccake2-720x720.jpg" alt="">
+                </div>
+                <div class="content">
+                    <h3>Chocolate fudge Cake</h3>
+                    <div class="price">Rs.1700</div>
+                </div>
+            </div>
+
+            <div class="box">
+                <div class="icons">
+                    <a href="#" class="fas fa-shopping-cart add-to-cart"></a> <!-- cart icon -->
+                </div>
+                <div class="img">
+                    <img decoding="async"
+                        src="https://www.createwithnestle.ph/sites/default/files/srh_recipes/043edb6dd818e5bac76a5e2676184851.jpg"
+                        alt="">
+                </div>
+                <div class="content">
+                    <h3>red velvet cake</h3>
+                    <div class="price">Rs.2000</div>
+                </div>
+            </div>
+
+            <div class="box">
+                <div class="icons">
+                    <a href="#" class="fas fa-shopping-cart add-to-cart"></a> <!-- cart icon -->
+                </div>
+                <div class="img">
+                    <img decoding="async"
+                        src="https://pabalefoodandbeverage.com/wp-content/uploads/2024/03/black-forest-cake-half-kg_1.webp"
+                        alt="">
+                </div>
+                <div class="content">
+                    <h3>black forest cake</h3>
+                    <div class="price">Rs.1500</div>
+                </div>
+            </div>
+            <div class="box">
+                <div class="icons">
+                    <a href="#" class="fas fa-shopping-cart add-to-cart"></a>
+                </div>
+                <div class="img">
+                    <img decoding="async"
+                        src="https://cdn.apartmenttherapy.info/image/upload/f_auto,q_auto:eco/k/Photo/Recipes/2020-02-How-To-German-Chocolate-Cake/HT-German-Chocolate-Cake_051"
+                        alt="german chocolate cake">
+                </div>
+                <div class="content">
+                    <h3>German Chocolate Cake</h3>
+                    <div class="price">Rs. 2500</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    {% include 'app/footer.html' %}
+</body>
+
+</html>

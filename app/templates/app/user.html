@@ -1,0 +1,139 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Dashboard</title>
+    <style>
+        .orders-container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            max-width: 80%;
+            margin: 20px auto;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            margin-bottom: 15px;
+            text-align: center;
+            font-size: 2.5rem;
+            color: #432818;
+        }
+
+        p {
+            font-size: 1.8rem;
+            color: #333;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        /* Table styling */
+        #ordersTable {
+            width: 100%;
+            border-collapse: collapse;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Table header styling */
+        #ordersTable thead th {
+            background-color: #432818;
+            /* Dark brown */
+            color: white;
+            padding: 10px;
+            text-align: center;
+            font-weight: bold;
+            font-size: 16px;
+            border: 1px solid #432818;
+        }
+
+        /* Table body styling */
+        #ordersTable tbody td {
+            padding: 10px;
+            border: 1px solid #432818;
+            text-align: center;
+            font-size: 14px;
+            color: #333;
+        }
+
+        /* Alternate row colors */
+        #ordersTable tbody tr:nth-child(even) {
+            background-color: #f5deb3;
+            /* Light beige for alternate rows */
+        }
+
+        /* Hover effect */
+        #ordersTable tbody tr:hover {
+            background-color: #f5deb3;
+            /* Khaki for hover */
+        }
+    </style>
+</head>
+
+<body>
+    <section id="user-dashboard" class="user-dashboard">
+        <div class="dashboard-container">
+            <h1>Welcome!</h1>
+            <p>This is your user dashboard.</p>
+            <div id="orders-container">
+                <!-- Table structure to display orders -->
+                <div class="orders-container">
+                    <table id="ordersTable">
+                        <thead>
+                            <tr>
+                                <th>Order ID</th>
+                                <th>Username</th>
+                                <th>Product Name</th>
+                                <th>Total Price</th>
+                                <th>Order Date</th>
+                            </tr>
+                        </thead>
+                        <tbody id="ordersBody">
+                            {% for order in orders %}
+                            <tr class="order-row" data-username="{{ order.username.username }}">
+                                <td>{{ order.order_id }}</td>
+                                <td>{{ order.username.username }}</td>
+                                <td>
+                                    {% for detail in order.orderdetail_set.all %}
+                                    {{ detail.product_name }} (Qty: {{ detail.quantity }})<br>
+                                    {% endfor %}
+                                </td>
+                                <td>{{ order.total_price }}</td>
+                                <td>{{ order.order_date|date:"M d, Y" }}</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+
+
+                <script>
+                    // Get the logged-in user's username from local storage
+                    const username = localStorage.getItem('username');
+
+                    // Function to filter rows based on username
+                    function filterOrdersByUsername(username) {
+                        // Select all order rows
+                        const rows = document.querySelectorAll('.order-row');
+
+                        rows.forEach(row => {
+                            // Show or hide row based on matching username
+                            if (row.dataset.username === username) {
+                                row.style.display = '';
+                            } else {
+                                row.style.display = 'none';
+                            }
+                        });
+                    }
+
+                    // Run the filter function if username is available
+                    if (username) {
+                        filterOrdersByUsername(username);
+                    } else {
+                        alert("Please log in to view your orders.");
+                        // Redirect to login page if not logged in
+                        window.location.href = "{% url 'admin_login' %}";
+                    }
+                </script>

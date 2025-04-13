@@ -1,0 +1,138 @@
+
+<!-- admin.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <style>
+           
+        .orders-container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            max-width: 80%;
+            margin: 20px auto;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+h1 {
+    margin-bottom: 15px;
+    text-align: center;
+    font-size: 2.5rem;
+    color: #432818;
+}
+h2 {
+font-size: 1.8rem;
+color:#432818 ;
+margin-bottom: 15px;
+text-align: center;
+}
+
+        /* Table styling */
+        #ordersTable {
+            width: 100%;
+            border-collapse: collapse;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Table header styling */
+        #ordersTable thead th {
+            background-color:#432818; /* Dark brown */
+            color: white;
+            padding: 10px;
+            text-align: center;
+            font-weight: bold;
+            font-size: 16px;
+            border: 1px solid #432818;
+        }
+
+        /* Table body styling */
+        #ordersTable tbody td {
+            padding: 10px;
+            border: 1px solid #432818;
+            text-align: center;
+            font-size: 14px;
+            color: #333;
+        }
+
+        /* Alternate row colors */
+        #ordersTable tbody tr:nth-child(even) {
+            background-color: #f5deb3; /* Light beige for alternate rows */
+        }
+
+        /* Hover effect */
+        #ordersTable tbody tr:hover {
+            background-color: #f5deb3; /* Khaki for hover */
+        }
+
+        /* Centering the link horizontally in its row */
+.center-link {
+    text-align: center; /* Centers inline elements like <a> */
+    margin: 20px 0; /* Adds spacing around the link */
+}
+
+/* Styling the link */
+.center-link a {
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #ff6600; /* Orange background */
+    padding: 12px 24px;
+    border-radius: 5px;
+    display: inline-block; /* Ensures proper padding */
+    transition: background 0.3s ease-in-out;
+}
+
+/* Hover effect */
+.center-link a:hover {
+    background-color: #e65c00; /* Darker orange on hover */
+}
+
+    </style>
+</head>
+<body>
+    <h1>Welcome to the Admin Dashboard!</h1>
+    <div class="center-link">
+        <a href="{% url 'product_view' %}">Products</a>
+    </div>
+    
+    <h2>All Orders</h2>
+<div class="orders-container">
+    <table id="ordersTable" border="1">
+        <thead >
+            <tr>
+                <th>Order ID</th>
+                <th>Username</th>
+                <th>Product Name</th>
+               
+                <th>Total Price</th>
+                <th>Order Date</th>
+            </tr>
+        </thead>
+        <tbody >
+            {% for order in orders %}
+                <tr>
+                    <td>{{ order.order_id }}</td>
+                    <td>{{ order.username.username }}</td>
+                    <td>
+                        {% for detail in order.orderdetail_set.all %}
+                            {{ detail.product_name }} (Qty: {{ detail.quantity }})<br>
+                        {% endfor %}
+                    </td>
+                    <td>{{ order.total_price }}</td>
+                    <td>{{ order.order_date|date:"M d, Y" }}</td> <!-- Format to show only date -->
+                </tr>
+            {% empty %}
+                <tr>
+                    <td colspan="5">No orders found.</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+        
+</body>
+</html>
