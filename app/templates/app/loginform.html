@@ -58,6 +58,12 @@
                         {% if signup_error %}
                             <p class="error">{{ signup_error }}</p>
                         {% endif %}
+                        <!-- success message -->
+                        {% if messages %}
+                        {% for message in messages %}
+                        <div class="alert alert-success">{{ message }}</div>
+                        {% endfor %}
+                        {% endif %}
                     </form>
                 </div>
             </div>
