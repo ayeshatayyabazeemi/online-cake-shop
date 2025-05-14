@@ -8,6 +8,8 @@ https://cake-shop-production-c242.up.railway.app
 ## 🖼 Screenshots
 ![image](https://github.com/user-attachments/assets/51adf42e-84bc-4f5e-a982-846cf4748d5b)
 ![image](https://github.com/user-attachments/assets/1f802d6c-4e64-4c42-b244-f93e86c2b2fa)
+![image](https://github.com/user-attachments/assets/662bb494-1487-4795-9588-fa9ff380340f)
+
 
 ## ✅ Features
 
