@@ -50,37 +50,6 @@ https://cake-shop-production-c242.up.railway.app
 
 ---
 
-## 🗂 Project Structure
-onlinecakeshop/
-│
-├── env/ # Python virtual environment
-├── manage.py
-├── requirements.txt
-├── README.md
-│
-├── onlinecakeshop/ # Django project settings
-│ ├── init.py
-│ ├── settings.py
-│ ├── urls.py
-│ └── wsgi.py
-│
-├── cake_shop_app/ # Main app
-│ ├── migrations/
-│ ├── static/
-│ │ ├── css/
-│ │ └── js/
-│ ├── templates/
-│ │ ├── index.html
-│ │ ├── loginform.html
-│ │ ├── cupcake.html
-│ │ ├── donut.html
-│ │ ├── cake.html
-│ │ └── admin.html
-│ ├── admin.py
-│ ├── models.py
-│ ├── views.py
-│ ├── urls.py
-│ └── forms.py
 
 
 
